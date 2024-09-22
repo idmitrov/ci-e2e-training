@@ -37,7 +37,7 @@ module.exports = defineConfig({
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'], isMobile: false, launchOptions: {
-        args: ["--blink-settings=primaryPointerType=4"]
+        args: ["--blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4"]
       } },
       
     },
