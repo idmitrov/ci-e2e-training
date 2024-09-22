@@ -35,7 +35,10 @@ module.exports = defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'], isMobile: false },
+      use: {
+        ...devices['Desktop Chrome'], isMobile: false, launchOptions: {
+        args: ["--blink-settings=primaryPointerType=4"]
+      } },
       
     },
 
