@@ -1,16 +1,19 @@
-name: Playwright Tests
+name: Playwright E2E Tests
 
 on:
   push:
     branches:
-      - main, develop
+      - main
+      - develop
   pull_request:
     branches:
-      - main, develop
+      - main
+      - develop
 
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -21,13 +24,16 @@ jobs:
           node-version: '21'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
+
+      - name: Install Playwright browsers
+        run: npx playwright install
 
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npx playwright test --project=chromium --project=firefox --project=webkit
 
-      - name: Upload screenshot
+      - name: Upload screenshots on failure
         uses: actions/upload-artifact@v3
         with:
-          name: screenshot
-          path: screenshots/datepicker-screenshot.png
+          name: playwright-screenshots
+          path: '**/screenshots/*.png'
