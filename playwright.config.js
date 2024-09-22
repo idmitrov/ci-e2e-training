@@ -36,16 +36,21 @@ module.exports = defineConfig({
     {
       name: 'chromium',
       use: {
-        ...devices['Desktop Chrome'], isMobile: false, launchOptions: {
-        args: ["--blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4"]
+        ...devices['Desktop Chrome'], isMobile: false,
+        launchOptions: {
+          args: ["--blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4"]
       } },
       
     },
-
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'], isMobile: false },
-    // },
+    {
+      name: 'firefox',
+      use: {
+        ...devices['Desktop Firefox'],
+        launchOptions: {
+          args: ["--blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4"]
+        }
+       },
+    },
 
     // {
     //   name: 'webkit',
