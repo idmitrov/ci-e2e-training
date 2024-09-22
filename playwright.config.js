@@ -42,15 +42,15 @@ module.exports = defineConfig({
       
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'], isMobile: false },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'], isMobile: false },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'], isMobile: false },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'], isMobile: false },
+    // },
 
     /* Test against mobile viewports. */
     // {
