@@ -3,10 +3,12 @@ name: Playwright E2E Tests
 on:
   push:
     branches:
-      - main, develop
+      - main
+      - develop
   pull_request:
     branches:
-      - main, develop
+      - main
+      - develop
 
 jobs:
   e2e-tests:
