@@ -60,7 +60,7 @@ module.exports = defineConfig({
       use: {
         ...devices['Desktop Safari'],
         launchOptions: {
-          args: ["--blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4"]
+          headless: false
         }
        },
     },
