@@ -1,19 +1,16 @@
-name: Playwright E2E Tests
+name: Playwright Tests
 
 on:
   push:
     branches:
-      - main
-      - develop
+      - main, develop
   pull_request:
     branches:
-      - main
-      - develop
+      - main, develop
 
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -21,19 +18,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '21'
+          node-version: '16'
 
-      - name: Install dependencies using Yarn
-        run: yarn install
-
-      - name: Install Playwright browsers
-        run: yarn playwright install
+      - name: Install dependencies
+        run: npm ci
 
       - name: Run Playwright tests
-        run: yarn playwright test --project=chromium --project=firefox --project=webkit
+        run: npx playwright test
 
-      - name: Upload screenshots on failure
+      - name: Upload screenshot
         uses: actions/upload-artifact@v3
         with:
-          name: playwright-screenshots
-          path: '**/screenshots/*.png'
+          name: screenshot
+          path: screenshots/datepicker-screenshot.png
