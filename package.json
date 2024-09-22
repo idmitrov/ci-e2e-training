@@ -1,0 +1,15 @@
+{
+  "name": "ci-e2e-training",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/idmitrov/ci-e2e-training.git",
+  "author": "Dimitar <mailto.dimitrov@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.47.2",
+    "@types/node": "^22.5.5"
+  },
+  "scripts": {
+    "test": "yarn playwright test"
+  }
+}
