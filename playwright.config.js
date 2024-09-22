@@ -55,10 +55,15 @@ module.exports = defineConfig({
        },
     },
 
-    // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'], isMobile: false },
-    // },
+    {
+      name: 'webkit',
+      use: {
+        ...devices['Desktop Safari'],
+        launchOptions: {
+          args: ["--blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4"]
+        }
+       },
+    },
 
     /* Test against mobile viewports. */
     // {
