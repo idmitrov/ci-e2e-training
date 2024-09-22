@@ -47,7 +47,10 @@ module.exports = defineConfig({
       use: {
         ...devices['Desktop Firefox'],
         launchOptions: {
-          args: ["--blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4"]
+          firefoxUserPrefs: {
+            "ui.primaryPointerCapabilities": 0x02 | 0x04,
+            "ui.allPointerCapabilities": 0x02 | 0x04,
+          }
         }
        },
     },
