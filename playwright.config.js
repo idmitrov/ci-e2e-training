@@ -38,6 +38,7 @@ module.exports = defineConfig({
       use: {
         ...devices['Desktop Chrome'], isMobile: false,
         launchOptions: {
+          headless: true,
           args: ["--blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4"]
         }
       },
@@ -47,6 +48,7 @@ module.exports = defineConfig({
       use: {
         ...devices['Desktop Firefox'],
         launchOptions: {
+          headless: true,
           firefoxUserPrefs: {
             "ui.primaryPointerCapabilities": 0x02 | 0x04,
             "ui.allPointerCapabilities": 0x02 | 0x04,
